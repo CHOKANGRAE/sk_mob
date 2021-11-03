@@ -554,8 +554,8 @@ input[type="checkbox"].check + .check_area > label:before {
   position: relative;
   background-color: #D8D8D8;
   border-radius: 100%;
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   transform: scale3d(0.9, 0.9, 0.9);
   transition: all 250ms ease-in;
 }
@@ -639,6 +639,7 @@ input.submit{
   background-color: #10192A;
   color:#fff;
   border-left:0;
+  -webkit-appearance:none;
 }
 
 .resetP{
