@@ -9,7 +9,7 @@
   ul, ol, li, dl, dt, dd, img, figure,figcaption, hr, 
   header, article, section, nav, footer, aside, main{margin:0; padding:0; border:0; outline:0;}
 
-  ul, ol, li, dl, dt, dd{list-style: none;}
+  ul, ol, li, dl, dt, dd{list-style: none; -webkit-appearance:none;}
   
   a {text-decoration:none; color:inherit;}
 
