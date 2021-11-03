@@ -639,6 +639,7 @@ input.submit{
   background-color: #10192A;
   color:#fff;
   border-left:0;
+  border-radius: 0;
   -webkit-appearance:none;
 }
 
