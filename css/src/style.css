@@ -45,7 +45,7 @@ html {scroll-behavior: smooth; user-select: none;}
     text-align:center;
     width:250px; margin:auto;
     font-weight: 500;
-    font-size:13pt; line-height:50px;
+    font-size:18px; line-height:50px;
   }
 
 /*=== 전문보기/자세히보기 팝업 === */
@@ -61,7 +61,7 @@ html {scroll-behavior: smooth; user-select: none;}
 
     .popupH{
       width:100%; height:30px;
-      font-size:7pt;
+      font-size:10px;
     }
 
     .popupC{
@@ -69,7 +69,7 @@ html {scroll-behavior: smooth; user-select: none;}
       border:1px solid #eee;
       padding:20px; box-sizing: border-box;
       overflow-y: scroll;
-      font-size:9pt;
+      font-size:12px;
     }
 
     .popupE{
@@ -83,7 +83,7 @@ html {scroll-behavior: smooth; user-select: none;}
       background-color: #333;
       color:#fff;
       font-weight: 600;
-      font-size:9pt;
+      font-size:12px;
     }
 
 /*=== 결제 비밀번호 재설정 팝업 === */
@@ -105,20 +105,20 @@ html {scroll-behavior: smooth; user-select: none;}
   }
 
   .resetBox p{
-    font-size:12pt;
+    font-size:16px;
     text-align: center;
   }
 
   .resetBtn{
-    width:72px; height:34px;
+    width:80px; height:35px;
     margin:auto; margin-top: 25px;
   }
 
   .resetBtn button{
-    width:72px; height:34px; font-weight: 500;
+    width:80px; height:35px; font-weight: 500;
     background: #10192A; color:#fff;
     border-radius: 50px;
-    font-size:9.5pt;
+    font-size:14px;
     text-align: center;
   }
 
@@ -138,7 +138,7 @@ html {scroll-behavior: smooth; user-select: none;}
       width:100%; height:40px;
       }
 
-    .contentTitle h2 {float:left; font-size:11pt; font-weight:500;}
+    .contentTitle h2 {float:left; font-size:14px; font-weight:500;}
 
     /* sms (sms 인증) */
     .smsContent{
@@ -159,7 +159,7 @@ html {scroll-behavior: smooth; user-select: none;}
     .smsContent dt{ 
       float:left; 
       width: 100%; height: 36px;
-      font-size:10pt; line-height:50px;
+      font-size:14px; line-height:50px;
       font-weight:500;
       text-indent:0.2rem;
       letter-spacing :-1px;
@@ -192,7 +192,7 @@ html {scroll-behavior: smooth; user-select: none;}
       display: block;
       width:100%;  height: 100%;
       box-sizing: border-box;
-      border:0; font-size:11pt;
+      border:0; font-size:15px;
       font-weight: 600;
     }
 
@@ -215,6 +215,7 @@ html {scroll-behavior: smooth; user-select: none;}
       border:1px solid #ccc;
       cursor: pointer;
       text-indent:0;
+      font-size:14px;
     }
 
     .userName_area .locLabel{margin-right: 5px;}
@@ -260,13 +261,13 @@ html {scroll-behavior: smooth; user-select: none;}
     }
 
     .birthday_area div input#birthday-back{
-      width:18%; text-align: right;
+      width:20%; text-align: right;
     }
 
     .birthday_area div span.secret{
       width:30%;
       display:block; line-height:22px;
-      font-size:9pt; letter-spacing:-1px;
+      font-size:11px; letter-spacing:-1px;
       color:#777;
     }
 
@@ -284,6 +285,7 @@ html {scroll-behavior: smooth; user-select: none;}
       width:22%; height:100%;
       border-radius: 25px;
       background-color: #eee;
+      font-size:14px;
     }
 
     #phoneCerti.active{
@@ -304,9 +306,9 @@ html {scroll-behavior: smooth; user-select: none;}
       display:none;
       position:absolute;
       width:50px;
-      border:0; font-size:10pt;
+      border:0; font-size:16px;
       color:#f00; 
-      top:12%; right:22%;
+      right:23%;
     }
 
     .certiNumber_area button{
@@ -322,16 +324,18 @@ html {scroll-behavior: smooth; user-select: none;}
     }
 
     .certiNumber_area p{
-      font-size:9pt; line-height:22px;
+      font-size:12px; line-height:22px;
       color:#555; letter-spacing: -0.5px;
     }
 
     .certiNumber_area span#resend{
       display:none;
       border:none;
-      font-size:9pt; background:transparent;
+      font-size:12px; background:transparent;
       cursor:pointer;
     }
+
+    #certiButton {font-size:14px;}
 
     /* terms (약관 및 개인정보 수집 동의) */
     .termsContent{
@@ -339,7 +343,7 @@ html {scroll-behavior: smooth; user-select: none;}
     }
     .termsContent li{
       width:100%; height:25px;
-      font-size:9pt;
+      font-size:12px;
     }
     .termsContent input,
     .termsContent .check_area{float:left;}
@@ -366,7 +370,7 @@ html {scroll-behavior: smooth; user-select: none;}
     }
 
     .termsContent label.all_check_title{  
-      font-size:11pt; font-weight: 600; cursor: pointer;}
+      font-size:14px; font-weight: 600; cursor: pointer;}
 
     input[type="checkbox"] {
       position: absolute; z-index: -1; width: 0; height: 0; overflow: hidden;
@@ -379,8 +383,8 @@ html {scroll-behavior: smooth; user-select: none;}
     span.terms_views{
       cursor: pointer;
       text-decoration: underline;
-      font-size:9.5pt;
-      color:#DCDCDC;
+      font-size:14px
+      color : #DCDCDC;
     }
 
     /* confirm (확인/취소/계속 진행하기) */
@@ -389,7 +393,7 @@ html {scroll-behavior: smooth; user-select: none;}
       border-radius:25px;
       border:1px solid #ccc;
       margin-top: 5px;
-      font-size:11pt; font-weight: 600;
+      font-size:16px; font-weight: 600;
     }
 
     .confirmBox button#confirmBtn{
@@ -402,7 +406,8 @@ html {scroll-behavior: smooth; user-select: none;}
       border-radius: 0;
       width:100%; height:70px;
       border:0;
-      font-size:11pt; 
+      font-size:16px; 
+      font-weight:600;
       background-color: #f5f6f7;
     }
 
@@ -418,7 +423,7 @@ html {scroll-behavior: smooth; user-select: none;}
   background-color: #fbfbfb;
   padding:10px; box-sizing: border-box;
   overflow-y:scroll;
-  font-size:10pt;
+  font-size:12px;
 }
 
 #footBox{
@@ -437,7 +442,7 @@ html {scroll-behavior: smooth; user-select: none;}
   line-height: 5px; 
   padding-left:35px; 
   cursor: pointer;
-  font-size:10.5pt;
+  font-size:14px;
   font-weight: 400;
   
 }
@@ -476,7 +481,7 @@ input[type="checkbox"].check + .check_area > label:before {
   background-color: #f5f6f7;
   margin-top: 20px;
   width:100%; height:70px;
-  font-weight: 600; font-size:11pt;
+  font-weight: 600; font-size:16px;
 }
 
 .consentBtn button.action{
@@ -486,8 +491,8 @@ input[type="checkbox"].check + .check_area > label:before {
 
 /* ============ 휴대폰 결제 비밀번호 등록(#newPassword) ============== */
 .pwTitle{width:100%; height:50px; letter-spacing: -1px;}
-.pwTitle h2{font-size:13pt; font-weight: 500; color:#333;}
-.pwTitle p{font-size:11pt; color:#727377; margin-top: 5px;}
+.pwTitle h2{font-size:16px; font-weight: 500; color:#333;}
+.pwTitle p{font-size:14px; color:#727377; margin-top: 5px;}
 
 .pwT2 h2{margin-bottom: 5px; letter-spacing: 0;}
 .pwT2 p{margin-top: 0;}
@@ -503,12 +508,12 @@ input[type="checkbox"].check + .check_area > label:before {
 }
 
 .pwInt p{
-  font-size:14pt; letter-spacing:-0.5px; line-height: 25px;
+  font-size:20px; letter-spacing:-0.5px; line-height: 25px;
   font-weight: 500; margin-top: 5px; color:#333;
 }
 
 .pwInt p.pwC-user{
-  font-size:11pt; margin-top: 20px;
+  font-size:14px; margin-top: 20px;
   font-weight: 500; color:#191919;
 }
 
@@ -527,7 +532,7 @@ input[type="checkbox"].check + .check_area > label:before {
   background-color: #283040;
   color:#fff;
   font-weight: 300;
-  font-size: 9pt;
+  font-size: 12px;
   line-height: 25px;
 }
 
@@ -605,7 +610,7 @@ input[type="checkbox"].check + .check_area > label:before {
   height: 70px;
   text-align: center;
   font-weight: 400;
-  font-size: 12pt;
+  font-size: 16px;
   cursor: pointer;
   user-select: none;
   transition: all 250ms ease;
@@ -618,7 +623,7 @@ input[type="checkbox"].check + .check_area > label:before {
 }
 
 .number_area{
-  font-size:14pt;
+  font-size:20px;
 }
 
 .pin__numbers--item:hover{
@@ -634,7 +639,7 @@ input[type="checkbox"].check + .check_area > label:before {
 }
 
 input.submit{
-  font-size:12pt;
+  font-size:16px;
   font-weight: 400;
   background-color: #10192A;
   color:#fff;
@@ -647,7 +652,7 @@ input.submit{
   margin-top: 50px;
   text-align: center;
   cursor: pointer;
-  font-size:10pt;
+  font-size:14px;
   color:#737277;
   text-decoration: underline;
 }
@@ -662,19 +667,19 @@ input.submit{
 }
 
 .user_info p.user_info_p{
-  font-size:12pt;
+  font-size:16px;
 }
 
 p.completeM{
   text-align: center;
-  font-size:14pt;
+  font-size:20px;
   font-weight:600;
 }
 
 .complete_next{
   margin:auto;
   margin-top: 10vh;
-  width:90%; height:50px;
+  width:343px; height:50px;
 }
 
 .complete_next button{
@@ -688,8 +693,8 @@ p.completeM{
 
 .complete_next button a {
   line-height: 50px;
-  font-size:13pt;
-  font-weight: 500;
+  font-size:18px;
+  font-weight: 600;
 }
 
 .complete_next button.shop{
@@ -700,37 +705,4 @@ p.completeM{
 
 .complete_next button.cart{
   color:#D8D8D8;
-}
-
-/* ===================================== */
-/* ============== web css ============== */
-/* ===================================== */
-@media screen and (min-width: 481px) {
-  /* confirm (확인/취소/계속 진행하기) */
-  .confirmBox button{
-    width:49%; height:45px;
-    border-radius:25px;
-    border:1px solid #ccc;
-    margin-top: 5px;
-    font-size:11pt; font-weight: 600;
-  }
-
-  .confirmBox button#confirmBtn{
-    border:0;
-    background-color: #eee;
-  }
-
-  button#nextBtn{
-    margin-top:10px;
-    border-radius: 0;
-    width:100%; height:70px;
-    border:0;
-    font-size:11pt; 
-    background-color: #f5f6f7;
-  }
-
-  button#nextBtn.action{
-    background-color: #EA002C;
-    color:#fff;
-  }
 }
