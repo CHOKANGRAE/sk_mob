@@ -572,7 +572,7 @@ input[type="checkbox"].check + .check_area > label:before {
   justify-content: space-around;
   align-content: flex-end;
   width: 100%;
-  background-color: #10192A;
+  background-color: #0A101C;
   color:#fff;
 }
 
@@ -583,7 +583,6 @@ input[type="checkbox"].check + .check_area > label:before {
   justify-content: space-around;
   align-content: flex-end;
   width: 80%;
-  background-color: #10192A;
 }
 
 .pin__number__cont{
@@ -592,7 +591,6 @@ input[type="checkbox"].check + .check_area > label:before {
   align-items: center;
   justify-content: space-around;
   align-content: flex-end;
-  background-color: #10192A;
   width: 20%;
 }
 
@@ -611,6 +609,7 @@ input[type="checkbox"].check + .check_area > label:before {
   cursor: pointer;
   user-select: none;
   transition: all 250ms ease;
+  background-color: #10192A;
   border-right:1px solid #16223A;
   border-top:1px solid #16223A;
   box-sizing: border-box;
