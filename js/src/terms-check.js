@@ -1,13 +1,12 @@
 //terms-check.js
 //약관 및 개인정보수집 동의
 
-(function($){
 	var ac = $('#allCheck');
 	var ti = $('#termsInfo');
 	var tp = $('#termsProcess');
 	var ts = $('#termsService');
 	var tu = $('#termsUse');
-	
+
 // =======================================================
 var inputCk = $('input[type="checkbox"]');
 var inputCheckList = [ti, tp, ts, tu];
@@ -21,14 +20,11 @@ ac.on('click', function(e){
 	if(acAttr){
 		inputCk.addClass('check');
 		inputCk.attr({'checked': true});
-		$("#confirmBtn").prop("disabled",false);
-		$('#confirmBtn').css({"background-color":"black", "color":"white"});
+
+		
 	}else{
 		inputCk.removeClass('check');
 		inputCk.attr({'checked': false});
-		$("#confirmBtn").prop("disabled",true);
-		$('#confirmBtn').css({"background-color":"#eee", "color":"#ccc"});
-		$('#nextBtn').attr("disabled",true);
 	}	
 });
 // -----------------------------------------------------
@@ -38,14 +34,9 @@ var AllCk = function(state){
 	if(state === true){
 		ac.attr({'checked':true});
 		ac.addClass('check');
-		$("#confirmBtn").prop("disabled",false);
-		$('#confirmBtn').css({"background-color":"black", "color":"white"});
 	}else {
 		ac.attr({'checked': false});
 		ac.removeClass('check');
-		$("#confirmBtn").prop("disabled",true);
-		$('#nextBtn').attr("disabled",true);
-		$('#confirmBtn').css({"background-color":"#eee", "color":"#ccc"});
 	}
 };
 
@@ -84,4 +75,39 @@ $.each(inputCheckList, function(data){
 	});	
 });
 
-})(jQuery);
+
+$('.terms_views').click(function(){
+	$('#popupBox').show();
+});
+
+$('.tv-1').click(function(){
+	$('.popupH').find('h2').text("개인정보 수집/이용 동의");
+	$('.popupC').find('p').text("개인정보 수집 및 이용 동의에 대한 약관내용입니다.");
+});
+
+$('.tv-2').click(function(){
+	$('.popupH').find('h2').text("고유식별정보처리 동의");
+	$('.popupC').find('p').text("고유식별 정보처리 약관내용입니다.");
+});
+
+$('.tv-3').click(function(){
+	$('.popupH').find('h2').text("서비스 이용약관 동의");
+	$('.popupC').find('p').text("서비스 이용 약관내용입니다.");
+});
+
+$('.tv-4').click(function(){
+	$('.popupH').find('h2').text("통신사 이용약관 동의");
+	$('.popupC').find('p').text("통신사 이용 약관내용입니다.");
+});
+
+$('.termsE').click(function(){
+	$('#popupBox').hide();
+});
+
+let turnAngle = 180;
+  
+function turn(image) {
+image.setAttribute("style", "transform: rotate(" + turnAngle + "deg)");
+turnAngle = turnAngle + 180;
+$('.require_check').slideToggle(100);
+}

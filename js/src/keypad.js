@@ -122,7 +122,7 @@ let pin = new FastPin();
 					} else {
 						pin.wrong();
 					}
-				}, 1000);
+				});
 			}
 		});
 

@@ -121,7 +121,7 @@ if (input.length === pin.pinLength) {
 		} else {
 			pin.wrong();
 		}
-	}, 1000);
+	});
 }
 });
 

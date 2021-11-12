@@ -4,20 +4,14 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximun-scale=3.0, minimum-scale=0.5">
+<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta http-equiv="Expire" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Contr"  content="no-cache">
 
 <link rel="stylesheet" href="../css/base/reset.css">
-<link rel="stylesheet" href="../css/base/common.css">
 
 <link rel="stylesheet" href="../css/src/style.css">
-
-
-<link rel="stylesheet" href="../fontawesome5/css/all.min.css">
-
-<!--[if IE]>
-<script src="./ie/html5shive/dist/html5shive.min.js"></script>
-<script src="./ie/pie/PIE.js"></script>
-<script src="./ie/respond/dist/respond.min.js"></script>
-<![endif]-->
 
 <title> 본인인증 </title>
 </head>
@@ -51,16 +45,8 @@
   </header>
   
   <!-- ========= #infoBox ================================ -->
-<form action="consent.html" method="get" name="sms">
+<form action="consent.html" method="get" name="sms" onsubmit="return certiCheck()">
   <section id="infoBox">
-      <div class="contentBox">
-        <!--
-        <div class="contentTitle">
-          <i class="fas fa-user-circle"></i>
-          <h2>SMS인증</h2>
-        </div>
-        -->
-
         <div class="smsContent">
           <fieldset class="user_set">
             <legend class="hidden">SMS 인증</legend>
@@ -73,7 +59,7 @@
                   <input type="text" name="name" id="name" value="" placeholder="이름" required />
                 </div>
 
-                <input type="radio" class="hidden radio-label" name="accept-offers" id="loc-btn" checked="checked"/>
+                <input type="radio" class="hidden radio-label" name="accept-offers" id="loc-btn" />
                 <label class="button-label locLabel" for="loc-btn">내국인</label>
 
                 <input type="radio" class="hidden radio-label" name="accept-offers" id="for-btn" />             
@@ -89,12 +75,14 @@
                   <span class="space">&#45;</span>
                   <input type="tel" id="birthday-back" name="" maxlength="1" placeholder="뒤 1자리" autocomplete='off' required />
                   <span class="secret">
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
+                    <ul>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
                   </span>
                 </div>
               </dd>
@@ -105,200 +93,86 @@
               <dt><label for="phoneNumber">휴대폰번호</label></dt>
               <dd class="input_area phoneNumber_area">
                 <div>
-                  <input type="tel" id="phoneNumber" name="phoneNumber" value="" placeholder="'-'제외하고 숫자만 입력" maxlength="11" required/>
+                  <input type="tel" id="phoneNumber" name="phoneNumber" value="" placeholder="'-'제외하고 숫자만 입력" maxlength="11" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required/>
                 </div>
-                <button type="button" id="phoneCerti" name="phoneCerti" disabled="disabled" />인증</button>
+                <p class="phoneconfirmText error">&#42; 휴대폰 번호가 올바르지 않습니다.</p>
               </dd>
             </dl>
 
-            <dl>
+            <dl class="certiDL">
               <dt><label for="certiNumber">인증번호</label></dt>
               <dd class="input_area certiNumber_area">
                 <div>
-                  <input type="tel" id="certiNumber" name="certiNumber" value="" placeholder="숫자 6자리 입력" maxlength="6" autocomplete='off' required/>
+                  <input type="tel" id="certiNumber" name="certiNumber" value="" placeholder="숫자 6자리 입력" maxlength="6" required/>
                 </div>
 
                 <div id="timer">03:00</div>
 
-                <button type="button" id="certiButton" name="certiButton" disabled>확인</button>
+                <p class="confirmText error">&#42; 인증번호 불일치, 인증번호를 다시 확인해주세요.</p>
 
-                <p>- 3분 이내로 인증번호(6자리)를 입력해주세요.</p>
-                <p>- 입력 시간 초과 시 "재전송"을 눌러주세요. <span id="resend"><u>재전송</u></span></p>
+                <p>&#42; 3분 이내로 인증번호(6자리)를 입력해주세요.</p>
+                <p>&#42; 입력 시간 초과 시 "재전송"을 눌러주세요. <span id="resend"><u>재전송</u></span></p>
               </dd>
-              <dd class="confirm_text"></dd>
-              <dd class="confirm_text"></dd>
             </dl>
           </fieldset>
         </div>
 
-        <div class="termsBox contentBox">
-        <div class="termsTitle contentTitle">
-          <h2>[약관 및 개인정보수집 동의]</h2>
-        </div>
-
         <div class="termsContent">
-          <fieldset class="require_check">
-            <legend class="hidden"> 동의 확인 </legend>
-              <ul class="checkUl">
-                <li>
-                  <input type="checkbox" name="termsInfo" class="checkbox" id="termsInfo" value="개인정보 수집/이용 동의" required />
-                  <div class="check_area">
+          <ul class="list">
+            <li>
+              <fieldset class="all_check">
+                <legend class="hidden">전체 동의확인</legend>
+                <input type="checkbox" id="allCheck" name="allCheck" value="전체 동의" />
+                <label for="allCheck" class="all_check_title">모두 동의</label>
+
+                <div class="up_btn" onClick="turn(this)"></div>
+              </fieldset>
+            
+              <fieldset class="require_check">
+                <legend class="hidden"> 동의 확인 </legend>
+                <ul class="checkUl">
+                  <li class="checkLi">
+                    <input type="checkbox" name="termsInfo" class="checkbox" id="termsInfo" value="개인정보 수집/이용 동의" required />
                     <label for="termsInfo">개인정보 수집/이용 동의</label>
                     <span class="terms_views tv-1">전문보기</span>
-                  </div>
-                </li>
-    
-                <li>
-                  <input type="checkbox" name="termsProcess" class="checkbox" id="termsProcess" value="개인정보 수집/이용 동의" required />
-                  <div class="check_area">
+                  </li>
+          
+                  <li class="checkLi">
+                    <input type="checkbox" name="termsProcess" class="checkbox" id="termsProcess" value="개인정보 수집/이용 동의" required />
                     <label for="termsProcess">고유식별정보처리 동의</label>
                     <span class="terms_views tv-2">전문보기</span>
-                </li>
-    
-                <li>
-                  <input type="checkbox" name="termsService" class="checkbox" id="termsService" value="개인정보 수집/이용 동의" required />
-                  <div class="check_area">
+                  </li>
+          
+                  <li class="checkLi">
+                    <input type="checkbox" name="termsService" class="checkbox" id="termsService" value="개인정보 수집/이용 동의" required />
                     <label for="termsService">서비스 이용약관 동의</label>
                     <span class="terms_views tv-3">전문보기</span>
-                </li>
-    
-                <li>
-                  <input type="checkbox" name="termsUse" class="checkbox" id="termsUse" value="개인정보 수집/이용 동의" required>
-                  <div class="check_area">
+                  </li>
+          
+                  <li class="checkLi">
+                    <input type="checkbox" name="termsUse" class="checkbox" id="termsUse" value="개인정보 수집/이용 동의" required>
                     <label for="termsUse">통신사 이용약관 동의</label>
                     <span class="terms_views tv-4">전문보기</span>
-                </li>
-              </ul>
-          </fieldset>
-
-          <div class="line"></div>
-
-          <fieldset class="all_check">
-            <legend class="hidden">전체 동의확인</legend>
-            <input type="checkbox" id="allCheck" name="allCheck" value="전체 동의" />
-            <div class="check_area allCheck_area">
-              <!-- <i class="fas fa-check-square"></i> -->
-              <label for="allCheck" class="all_check_title">모두 동의</label>
-            </div>
-          </fieldset>
+                  </li>
+                  <p class="checkconfirmText error">&#42; 약관에 동의해주세요.</p>
+                </ul>
+              </fieldset>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="confirmBox">
-        <button type="button" name="confirm" id="confirmBtn" disabled="disabled">확인</button>
-        <button type="button" name="cancel" id="cancelBtn" onclick="window.close()">취소</button>
-      </div>
-
-      
-    
   </section>
 
-  <button type="submit" name="submit" id="nextBtn" disabled="disabled">계속 진행하기</button>
+  <button type="submit" id="certiBtn" disabled>인증번호 받기</button>
+  <button type="submit" name="submit" id="nextBtn">인증 완료</button>
 </form>
-
-  
 </div>
 
 <!--script -->
 <script src="../js/base/jquery-3.5.1.min.js"></script>
 <script src="../js/base/jquery-ui.min.js"></script>
 
-<script src="../js/src/terms-check.js"></script>
-<script src="../js/src/terms-views.js"></script>
 <script src="../js/src/sms-certi.js"></script>
-<script>
-  var timer = null;
-	var isRunning = false;
-	$(function(){
+<script src="../js/src/terms-check.js"></script>
 
-				$("#phoneCerti").click(function(e){
-					$(this).addClass('active');
-					$('#timer').show();
-
-				var display = $('#timer');
-				var leftSec = 179;
-				// 남은 시간
-				// 이미 타이머가 작동중이면 중지
-				if (isRunning){
-					clearInterval(timer);
-					display.html("");
-					startTimer(leftSec, display);
-				}else{
-				startTimer(leftSec, display);
-					
-				}
-			});
-	});
-
-			
-	function startTimer(count, display) {
-							
-					var minutes, seconds;
-							timer = setInterval(function () {
-							minutes = parseInt(count / 60, 10);
-							seconds = parseInt(count % 60, 10);
-			
-							minutes = minutes < 10 ? "0" + minutes : minutes;
-							seconds = seconds < 10 ? "0" + seconds : seconds;
-			
-							display.html(minutes + ":" + seconds);
-			
-							// 타이머 끝
-							if (--count < 0) {
-						clearInterval(timer);
-						isRunning = false;
-            $('#resend').show();
-							}
-					}, 1000);
-							isRunning = true;
-	}
-</script>
-
-<script>
-  var timer = null;
-	var isRunning = false;
-
-	$(function(){
-
-				$("#resend").click(function(e){
-					$('#timer').show();
-
-				var display = $('#timer');
-				var leftSec = 179;
-				// 남은 시간
-				// 이미 타이머가 작동중이면 중지
-				if (isRunning){
-					clearInterval(timer);
-					display.html("");
-					startTimer(leftSec, display);
-				}else{
-				startTimer(leftSec, display);
-					
-				}
-			});
-	});
-
-			
-	function startTimer(count, display) {
-							
-					var minutes, seconds;
-							timer = setInterval(function () {
-							minutes = parseInt(count / 60, 10);
-							seconds = parseInt(count % 60, 10);
-			
-							minutes = minutes < 10 ? "0" + minutes : minutes;
-							seconds = seconds < 10 ? "0" + seconds : seconds;
-			
-							display.html(minutes + ":" + seconds);
-			
-							// 타이머 끝
-							if (--count < 0) {
-						clearInterval(timer);
-            $('#resend').show();
-						isRunning = false;
-							}
-					}, 1000);
-							isRunning = true;
-	}
-</script>
 </body>
 </html>

@@ -3,10 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximun-scale=3.0, minimum-scale=0.5">
-
-<link rel="stylesheet" href="./css/base/reset.css">
-<link rel="stylesheet" href="./css/base/common.css">
 
 <!--[if IE]>
 <script src="./ie/html5shive/dist/html5shive.min.js"></script>
@@ -14,12 +10,32 @@
 <script src="./ie/respond/dist/respond.min.js"></script>
 <![endif] -->
 
+<style>
+	.indexA{
+  display:block;
+  position: absolute;
+  top:0; left:0; bottom:0; right:0;
+  width:200px; height:50px;
+  border:1px solid #ccc;
+  margin:auto; text-align: center;
+  line-height: 50px;
+	}
+</style>
+
 <title> index </title>
 </head>
 <body>
 <!-- layout -->
+<a class="indexA" href=javascript:openNewWindow('./page/sms-certi.html')>C-PORT WEB</a>
 
 <!--script -->
-<script> window.location.href  = "./page/sms-certi.html"; </script>
+<script>
+		var windowW = window.innerWidth;
+
+		function openNewWindow(window) {
+			open (window,"NewWindow","left=300, top=100, toolbar=no, location=no,\
+						directories=no, status=no, menubar=no, scrollbars=no\
+						resizable=yes, width=400, height=748");}
+</script>
 </body>
 </html>

@@ -127,29 +127,19 @@ html {scroll-behavior: smooth; user-select: none;}
   #infoBox{
    position: relative;
    width:100%; height:auto;
-   padding:60px 15px 9px 15px; box-sizing: border-box;
+   padding:60px 15px 0px 15px; box-sizing: border-box;
   }
-
-
- /* 컨텐츠 아이콘/제목 */
- .contentBox{width:100%; height:auto;}
-    
-    .contentTitle{
-      width:100%; height:40px;
-      }
-
-    .contentTitle h2 {float:left; font-size:14px; font-weight:500;}
 
     /* sms (sms 인증) */
     .smsContent{
-      width:100%; height:auto;
+      width:100%; height:400px;
     }
 
       .smsContent > form,
       .smsContent fieldset { width: 100%; height:auto; }
     
     .smsContent dl {
-      width: 100%; height:auto; min-height:40px;
+      width: 100%; height:65px; min-height:40px;
       margin-bottom: 16px;
     }
     .smsContent dl:last-of-type{
@@ -194,24 +184,29 @@ html {scroll-behavior: smooth; user-select: none;}
       box-sizing: border-box;
       border:0; font-size:15px;
       font-weight: 600;
+      color:#191919;
+    }
+
+    .input_area input::placeholder{
+      color:#D8D8D8;
+      font-weight:400;
+      font-size:14px;
+      letter-spacing: 0;
     }
 
     /* name */
     .userName_area div{
-      width:50%; margin-right:1%;
-    }
-
-		.userName_area div.action{
-      border:1px solid #f00;
+      width:53%; margin-right:1%;
     }
 
     .userName_area .button-label{
       display:inline-block;
-      float:left; width:23%; height:100%;
+      float:left; width:80px; height:100%;
       line-height:36px;
       text-align: center;
       background-color:#fff;
       border-radius: 20px;
+      color:#ccc;
       border:1px solid #ccc;
       cursor: pointer;
       text-indent:0;
@@ -252,50 +247,54 @@ html {scroll-behavior: smooth; user-select: none;}
     }
 
     .birthday_area div input#birthday-front{
-      width:44%; margin-right:1%;
+      width:110px; margin-right:1%;
+      letter-spacing: 2px;
     }
 
     .birthday_area div span.space{
-      width:1%; margin-right:1%;
+      width:5px; margin-right:1%;
       display:block; line-height:32px;
     }
 
     .birthday_area div input#birthday-back{
-      width:20%; text-align: right;
+      width:70px; text-align: right;
     }
 
     .birthday_area div span.secret{
-      width:30%;
+      width:100px;
       display:block; line-height:22px;
       font-size:11px; letter-spacing:-1px;
       color:#777;
     }
 
+    .birthday_area div span.secret li{
+      float:left;
+      width:10px; height:10px;
+      margin-left: 5px; margin-top: 7px;
+      background-color: #dadada; border-radius: 10px; 
+    }
+
     /* phoneNumber */
+
     .phoneNumber_area div{
-      width:77%; margin-right:1%;
+      width:100%; margin-right:1%;
     }
 
     .phoneNumber_area div input{
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
 
-    #phoneCerti{
-      float:left;
-      width:22%; height:100%;
-      border-radius: 25px;
-      background-color: #eee;
-      font-size:14px;
-    }
+    .error{margin-top: 5px;}
 
-    #phoneCerti.active{
-      background-color: #333;
-      color:#fff;
+    .phoneconfirmText{
+      display:none; color:#EA002C; font-size:12px;
     }
 
     /* certiNumber */
+    .certiDL{display:none;}
+    
     .certiNumber_area div{
-      width:77%; margin-right:1%;
+      width:100%; margin-right:1%;
     }
 
     .certiNumber_area div input{
@@ -303,12 +302,11 @@ html {scroll-behavior: smooth; user-select: none;}
     }
 
     .certiNumber_area #timer{
-      display:none;
       position:absolute;
       width:50px;
-      border:0; font-size:16px;
-      color:#f00; 
-      right:23%;
+      border:0; font-size:14px;
+      color:#EA002C; 
+      right:0;
     }
 
     .certiNumber_area button{
@@ -328,6 +326,10 @@ html {scroll-behavior: smooth; user-select: none;}
       color:#555; letter-spacing: -0.5px;
     }
 
+    .certiNumber_area p.confirmText{
+      display:none;
+      color:#EA002C;}
+
     .certiNumber_area span#resend{
       display:none;
       border:none;
@@ -335,31 +337,51 @@ html {scroll-behavior: smooth; user-select: none;}
       cursor:pointer;
     }
 
-    #certiButton {font-size:14px;}
-
     /* terms (약관 및 개인정보 수집 동의) */
     .termsContent{
-      margin-bottom: 20px;
+      height:180px;
     }
-    .termsContent li{
+    /* accordian */
+    .all_check{
+      height:30px;
+      border-bottom:1px solid #ccc;
+    }
+
+    .up_btn{
+      float:right; margin-right: 10px;
+      width:25px; height:25px;
+      background-image: url(../../img/icons/up.png);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      cursor:pointer;
+
+      transition:all 0.9s ease;
+
+    }
+    
+    .require_check{
+      width:100%; height:150px;
+      padding-top:20px;
+    }
+
+    .checkconfirmText{
+      display:none; color:#EA002C; font-size:12px;
+    }
+
+
+    /* terms 내용*/
+    .termsContent li.checkLi{
       width:100%; height:25px;
       font-size:12px;
     }
     .termsContent input,
     .termsContent .check_area{float:left;}
 
-    .termsContent .check_area{
-      width:93%;
-    }
-
     .termsContent span{
       position: absolute;
       right:5%; 
       cursor: pointer;
-    }
-
-    .termsContent .line{
-      height:10px;
     }
 
     .termsContent label{
@@ -372,53 +394,48 @@ html {scroll-behavior: smooth; user-select: none;}
     .termsContent label.all_check_title{  
       font-size:14px; font-weight: 600; cursor: pointer;}
 
-    input[type="checkbox"] {
-      position: absolute; z-index: -1; width: 0; height: 0; overflow: hidden;
-    }
-
-    .allCheck_area label:before{
-      color:#000;
-    }
-
     span.terms_views{
       cursor: pointer;
       text-decoration: underline;
-      font-size:14px
-      color : #DCDCDC;
+      font-size:14px;
+      color:#D8D8D8;
     }
 
-    /* confirm (확인/취소/계속 진행하기) */
-    .confirmBox button{
-      width:100%; height:45px;
-      border-radius:25px;
-      border:1px solid #ccc;
-      margin-top: 5px;
-      font-size:16px; font-weight: 600;
-    }
-
-    .confirmBox button#confirmBtn{
+    /* confirm (계속 진행하기) */
+    button#certiBtn{
+      margin-top:26px;
+      border-radius: 50px;
+      width:95%; height:70px;
+      margin-left: 2.5%;
       border:0;
-      background-color: #eee;
+      font-size:18px; 
+      font-weight: 600;
+      background-color:#EBEBEB;
+      color:#D8D8D8;
     }
+
+    button.action{
+      background-color:#333;
+      color:#fff;
+    }
+    
 
     button#nextBtn{
-      margin-top:10px;
-      border-radius: 0;
-      width:100%; height:70px;
+      display:none;
+      margin-top:26px;
+      border-radius: 50px;
+      width:95%; height:70px;
+      margin-left: 2.5%;
       border:0;
-      font-size:16px; 
-      font-weight:600;
-      background-color: #f5f6f7;
-    }
-
-    button#nextBtn.action{
-      background-color: #EA002C;
+      font-size:18px; 
+      font-weight: 600;
+      background-color: #333;
       color:#fff;
     }
 
 /* ============ 휴대폰 결제 서비스 동의(#consent) ============== */
 .terms-of-use{
-  width:100%; height:75vh;
+  width:100%; height:73vh;
   border:1px solid #ccc;
   background-color: #fbfbfb;
   padding:10px; box-sizing: border-box;
@@ -437,50 +454,41 @@ html {scroll-behavior: smooth; user-select: none;}
   margin-left: 5px;
 }
 
-.check_area label{
-  position: relative;
-  line-height: 5px; 
-  padding-left:35px; 
-  cursor: pointer;
-  font-size:14px;
-  font-weight: 400;
-  
-}
+#consent_p{margin-left: 10px;}
 
-.check_area label:before{
-  /*
-  width:20px; height:20px;
-  background-image: url(../../img/icons/check_before.png);
-  background-position: 50% 50%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  */
-  margin-left: 5px;
-  content:"\f058"; 
-  position: absolute;	top:8px; left: 0; 
-  z-index:1001;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;	font-size:15pt;
-  color:rgba(51,51,51,0.3);
-} 
-  
-input[type="checkbox"].check + .check_area > label:before {
-  /*
-  width:20px; height:20px;
-  background-image: url(../../img/icons/check_after.png);
-  background-position: 50% 50%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  */
-  margin-left: 5px;
-  content:"\f058"; 
-  color:#000;
+input[type="checkbox"] {display:none;}
+
+input[type="checkbox"] + label{
+  display: inline-block; cursor: pointer; 
+  padding-left: 28px; line-height: 16px; height:30px;
+  font-size:14px; color:#333333;
+  background-image: url(../../img/icons/check_before.png); background-position: 0 0;
+  background-size: 20px; background-repeat: no-repeat; width:50%;
+  }
+
+input[type="checkbox"].check + label { background-image: url(../../img/icons/check_after.png); }
+
+#allCheck + label { background-image: url(../../img/icons/allCheck_before.png); }
+#allCheck.check + label { background-image: url(../../img/icons/allCheck_after.png); }
+
+#consentCheck + label { 
+  height:auto; background-size: contain;
+  margin-left: 10px; padding-left:28px;
+  letter-spacing: -0.6px;
+  line-height: 20px;
+  background-image: url(../../img/icons/allCheck_before.png); }
+#consentCheck.check + label { background-image: url(../../img/icons/allCheck_after.png); }
+
+#consent_p{
+    display: inline-block; cursor: pointer; 
+    padding-left: 32px; line-height: 22px; 
+    font-size:14px; width:100%;
 }
 
 .consentBtn button{
   background-color: #f5f6f7;
   margin-top: 20px;
-  width:100%; height:70px;
+  width:100%; height:80px;
   font-weight: 600; font-size:16px;
 }
 
@@ -489,17 +497,14 @@ input[type="checkbox"].check + .check_area > label:before {
   color:#fff;
 }
 
-/* ============ 휴대폰 결제 비밀번호 등록(#newPassword) ============== */
+/* ================= 휴대폰 결제 비밀번호 ================ */
 .pwTitle{width:100%; height:50px; letter-spacing: -1px;}
-.pwTitle h2{font-size:16px; font-weight: 500; color:#333;}
-.pwTitle p{font-size:14px; color:#727377; margin-top: 5px;}
-
-.pwT2 h2{margin-bottom: 5px; letter-spacing: 0;}
-.pwT2 p{margin-top: 0;}
+.pwTitle h2{font-size:16px; font-weight: 500; margin-bottom: 10px; color:#333;}
+.pwTitle p{font-size:14px; color:#727377;}
 
 .pwContent{
   width:100%; height:150px;
-  padding:70px 10px 20px 10px; box-sizing: border-box;
+  padding:80px 10px 0px 10px; box-sizing: border-box;
 }
 
 .pwInt{
@@ -513,8 +518,8 @@ input[type="checkbox"].check + .check_area > label:before {
 }
 
 .pwInt p.pwC-user{
-  font-size:14px; margin-top: 20px;
-  font-weight: 500; color:#191919;
+  font-size:14px; margin-top: 50px; margin-bottom: 10px;
+  font-weight: 500; letter-spacing:0px; color:#191919;
 }
 
 .pw{
@@ -544,8 +549,8 @@ input[type="checkbox"].check + .check_area > label:before {
   align-items: center;
   flex-direction: column;
   margin: auto;
-  margin-top: 50px;
   color: #777;
+  margin-top: 100px;
 }
 
 .pin__dots {
@@ -561,7 +566,7 @@ input[type="checkbox"].check + .check_area > label:before {
   border-radius: 100%;
   width: 15px;
   height: 15px;
-  transform: scale3d(0.9, 0.9, 0.9);
+  transform: scale3d(1,1,1);
   transition: all 250ms ease-in;
 }
 
@@ -626,6 +631,13 @@ input[type="checkbox"].check + .check_area > label:before {
   font-size:20px;
 }
 
+.pinpad_back{
+  width:100%; height:100%;
+  background-image: url(../../img/icons/pinpad_back.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
 .pin__numbers--item:hover{
   background-color: #283040;
 }
@@ -644,8 +656,6 @@ input.submit{
   background-color: #10192A;
   color:#fff;
   border-left:0;
-  border-radius: 0;
-  -webkit-appearance:none;
 }
 
 .resetP{
@@ -654,8 +664,10 @@ input.submit{
   cursor: pointer;
   font-size:14px;
   color:#737277;
-  text-decoration: underline;
 }
+
+.resetP:hover,
+.resetP:focus{text-decoration: underline;}
 
 /* ============ 결제완료 (#complete) ============== */
 .user_info{
@@ -664,10 +676,6 @@ input.submit{
   text-align: center;
   letter-spacing :-1px;
   user-select: none;
-}
-
-.user_info p.user_info_p{
-  font-size:16px;
 }
 
 p.completeM{
@@ -687,7 +695,7 @@ p.completeM{
   width:100%; height:50px;
   border-radius: 25px;
   margin-bottom: 10px;
-  border:1px solid #D8D8D8;
+  border:1px solid #d8d8d8;
   background-color: #fff;
 }
 
@@ -704,5 +712,5 @@ p.completeM{
 }
 
 .complete_next button.cart{
-  color:#D8D8D8;
+  color:#d8d8d8;
 }
